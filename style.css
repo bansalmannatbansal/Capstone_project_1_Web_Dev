@@ -190,10 +190,10 @@ input {
 
 .subnav {
   position: sticky;
-  top: var(--navbar-h);
+  top: 64px;
   z-index: 999;
   background: var(--nav-bg);
-  height: var(--subnav-h);
+  height: 46px;
   border-bottom: 1px solid var(--border);
 }
 
