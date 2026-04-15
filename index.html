@@ -7,104 +7,71 @@
     <link rel="stylesheet" href="./CSS/style.css" />
 </head>
 <body>
-   <header class="navbar" id="top-navbar">
-    <div class="navbar__inner">
-      <a href="./index.html" class="navbar__logo" id="bms-logo" aria-label="BookMyShow home">
-        book<span class="logo-my">my</span>show
-      </a>
-      <div class="navbar__search" id="search-bar">
-        <span class="search-icon" aria-hidden="true">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="brand" id="brand-logo">
+        <div class="brand-orb">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="url(#orbGrad)" stroke-width="2"/>
+            <path d="M9 10 L14 7 L19 10 L19 18 L14 21 L9 18 Z" fill="url(#orbFill)" opacity="0.9"/>
+            <circle cx="14" cy="14" r="3" fill="#fff" opacity="0.8"/>
+            <defs>
+              <linearGradient id="orbGrad" x1="0" y1="0" x2="28" y2="28">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </linearGradient>
+              <linearGradient id="orbFill" x1="0" y1="0" x2="28" y2="28">
+                <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6"/>
+              </linearGradient>
+            </defs>
           </svg>
-        </span>
-        <input
-          type="search"
-          id="main-search-input"
-          class="search-input"
-          placeholder="Search for Movies, Events, Plays, Sports and Activities"
-          aria-label="Search for Movies, Events, Plays, Sports and Activities"
-        />
-      </div>
-      <div class="navbar__controls" id="navbar-controls">
-        <button class="city-selector" id="city-selector-btn" aria-label="Select city: Delhi-NCR">
-          Delhi-NCR
-          <span class="city-arrow" aria-hidden="true">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
-          </span>
+        </div>
+        <span class="brand-text">RishiLearn</span>
+      </a>
+
+      <!-- Sidebar-style Nav Links -->
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="#" class="nav-item active" id="nav-dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="#courses" class="nav-item" id="nav-courses">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Courses
+        </a>
+        <a href="#trending" class="nav-item" id="nav-trending">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          Trending
+        </a>
+        <a href="#categories" class="nav-item" id="nav-categories">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          Categories
+        </a>
+        <a href="#" class="nav-item" id="nav-paths">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Paths
+        </a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="nav-search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <button class="signin-btn" id="signin-btn" aria-label="Sign in to your account">Sign in</button>
-        <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
-          <span class="ham-line"></span>
-          <span class="ham-line"></span>
-          <span class="ham-line"></span>
+        <button class="btn-notify" id="btn-notify" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="notify-badge">3</span>
+        </button>
+        <div class="avatar-wrap" id="user-avatar">
+          <div class="avatar">R</div>
+          <span class="avatar-status"></span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
-
-  <nav class="subnav" id="sub-navbar" aria-label="Category navigation">
-    <div class="subnav__inner">
-      <ul class="subnav__tabs" id="subnav-tabs" role="list">
-        <li><a href="./index.html" class="subnav__tab subnav__tab--active" id="tab-movies">Movies</a></li>
-        <li><a href="./stream.html" class="subnav__tab" id="tab-stream">Stream</a></li>
-        <li><a href="./events.html" class="subnav__tab" id="tab-events">Events</a></li>
-        <li><a href="./play.html" class="subnav__tab" id="tab-plays">Plays</a></li>
-        <li><a href="#" class="subnav__tab" id="tab-sports">Sports</a></li>
-        <li><a href="#" class="subnav__tab" id="tab-activities">Activities</a></li>
-        <li><a href="#" class="subnav__tab subnav__tab--ipl" id="tab-ipl">TATA IPL 2026</a></li>
-      </ul>
-
-      <ul class="subnav__links" id="subnav-links" role="list">
-        <li><a href="#" class="subnav__link" id="link-list-show">ListYourShow</a></li>
-        <li><a href="#" class="subnav__link" id="link-corporates">Corporates</a></li>
-        <li><a href="#" class="subnav__link" id="link-offers">Offers</a></li>
-        <li><a href="#" class="subnav__link" id="link-gift-cards">Gift Cards</a></li>
-      </ul>
-    </div>
-  </nav>
-
-    <section class="hero" id="hero-banner" aria-label="Promotional banner">
-    <div class="hero__inner">
-
-      <div class="hero__content" id="hero-content">
-        <p class="hero__eyebrow" id="hero-eyebrow">HDFC Bank Credit Card</p>
-        <h1 class="hero__headline" id="hero-headline">
-          <span class="headline-gold">5% unlimited</span><br />cashback
-        </h1>
-        <p class="hero__sub" id="hero-subtext">on all merchant payments &amp; BookMyShow bookings</p>
-        <button class="hero__cta" id="hero-cta-btn">Apply Now</button>
-      </div>
-
-      <div class="hero__cards" id="hero-cards" aria-hidden="true">
-        <div class="credit-card credit-card--back" id="credit-card-back">
-          <div class="card-stripe"></div>
-          <div class="card-chip"></div>
-          <div class="card-number">•••• •••• •••• 4782</div>
-          <div class="card-brand">HDFC<br/><span class="card-brand-small">Bank</span></div>
-          <div class="card-logo">VISA</div>
-          <div class="card-purple-chip"></div>
-        </div>
-        <div class="credit-card credit-card--front" id="credit-card-front">
-          <div class="card-chip"></div>
-          <div class="card-number">•••• •••• •••• 3591</div>
-          <div class="card-brand">HDFC<br/><span class="card-brand-small">Bank</span></div>
-          <div class="card-logo">VISA</div>
-          <div class="card-footer">
-            <span class="card-holder">CARD HOLDER NAME</span>
-            <span class="card-expiry">VALID THRU 12/28</span>
-          </div>
-          <div class="card-purple-chip"></div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
-    <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
-    <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
-  </section>
 </body>
 </html>
