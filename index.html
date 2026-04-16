@@ -74,4 +74,144 @@
     </div>
   </header>
 </body>
+
+<section class="hero" id="hero">
+    <!-- Ambient glow orbs -->
+    <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-3" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Editorial Headline -->
+        <div class="hero-left">
+          <div class="hero-badge" id="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-mono">// system active</span>
+          </div>
+          <h1 class="hero-headline" id="hero-headline">
+            Learn Without
+            <span class="headline-gradient">Limits.</span>
+            <br/>Build What
+            <span class="headline-outline">Matters.</span>
+          </h1>
+          <p class="hero-sub" id="hero-sub">
+            A next-gen learning platform engineered for builders, hackers, and dreamers. Dive into curated courses, track your growth, and level up — at terminal velocity.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#courses" class="btn-primary" id="btn-start">
+              <span>Start Learning</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#trending" class="btn-ghost" id="btn-explore">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Demo
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-avatars">
+              <div class="t-avatar" style="background: linear-gradient(135deg,#8b5cf6,#ec4899)">A</div>
+              <div class="t-avatar" style="background: linear-gradient(135deg,#22d3ee,#8b5cf6)">M</div>
+              <div class="t-avatar" style="background: linear-gradient(135deg,#f59e0b,#ec4899)">P</div>
+              <div class="t-avatar" style="background: linear-gradient(135deg,#10b981,#22d3ee)">S</div>
+            </div>
+            <span class="trust-text"><strong>12,400+</strong> learners already enrolled</span>
+          </div>
+        </div>
+
+        <!-- Right: Floating Glass Cards -->
+        <div class="hero-right" id="hero-cards">
+
+          <!-- Card 1: Course Progress -->
+          <div class="glass-card card-progress" id="card-progress">
+            <div class="card-header-line">
+              <span class="card-label-mono">// progress.track</span>
+              <span class="card-badge-live">LIVE</span>
+            </div>
+            <div class="progress-visual">
+              <div class="radial-chart" id="radial-chart">
+                <svg class="radial-svg" viewBox="0 0 120 120" width="120" height="120">
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(139,92,246,0.15)" stroke-width="10"/>
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#radialGrad)" stroke-width="10"
+                    stroke-dasharray="314" stroke-dashoffset="78" stroke-linecap="round"
+                    transform="rotate(-90 60 60)" class="radial-progress-ring"/>
+                  <text x="60" y="56" text-anchor="middle" fill="#fff" font-size="20" font-weight="700" font-family="Syne">75%</text>
+                  <text x="60" y="72" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="IBM Plex Mono">complete</text>
+                  <defs>
+                    <linearGradient id="radialGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#8b5cf6"/>
+                      <stop offset="100%" stop-color="#ec4899"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="progress-info">
+                <p class="progress-course-name">Advanced React Architecture</p>
+                <p class="progress-detail-mono">18 / 24 lessons completed</p>
+                <div class="mini-progress-bar">
+                  <div class="mini-progress-fill" style="width: 75%"></div>
+                </div>
+                <div class="skill-tags">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Perf</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Streak -->
+          <div class="glass-card card-streak" id="card-streak">
+            <div class="card-header-line">
+              <span class="card-label-mono">// streak.data</span>
+              <span class="streak-fire">🔥</span>
+            </div>
+            <div class="streak-body">
+              <div class="streak-number">21</div>
+              <div class="streak-label">Day Streak</div>
+              <div class="streak-heatmap">
+                <div class="heatmap-grid" id="heatmap-grid">
+                  <!-- Generated by JS -->
+                </div>
+                <p class="streak-sub-mono">// last 28 days</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Upcoming Lessons -->
+          <div class="glass-card card-upcoming" id="card-upcoming">
+            <div class="card-header-line">
+              <span class="card-label-mono">// upcoming.queue</span>
+            </div>
+            <ul class="timeline-list">
+              <li class="timeline-item timeline-active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="tl-time-mono">Today, 3:00 PM</span>
+                  <span class="tl-title">Server Components Deep Dive</span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="tl-time-mono">Tomorrow, 10:00 AM</span>
+                  <span class="tl-title">TypeScript Generics Workshop</span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="tl-time-mono">Apr 17, 2:00 PM</span>
+                  <span class="tl-title">System Design: Scalability</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /hero-right -->
+      </div>
+    </div>
+  </section>
+
 </html>
