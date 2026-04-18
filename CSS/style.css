@@ -406,20 +406,13 @@ svg {
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
 }
 
-/* Left Column */
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
 
 .hero-badge {
   display: inline-flex;
@@ -562,11 +555,6 @@ svg {
 }
 
 /* Trust row */
-.hero-trust {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 .trust-avatars {
   display: flex;
 }
@@ -601,6 +589,9 @@ svg {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   position: relative;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .glass-card {
