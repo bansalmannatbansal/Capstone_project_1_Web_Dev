@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── 0. ROLE SELECTOR ──────────────────────────────────────── */
+  const roleBtns = document.querySelectorAll('.role-btn');
+  const loginTitle = document.getElementById('login-title');
+  let currentRole = 'student'; // default
+
+  roleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all
+      roleBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked
+      btn.classList.add('active');
+      
+      // Update role and title
+      currentRole = btn.getAttribute('data-role');
+      const roleName = btn.textContent;
+      if (loginTitle) {
+        loginTitle.textContent = `${roleName} Login`;
+      }
+    });
+  });
+
   /* ── 1. PASSWORD VISIBILITY TOGGLE ─────────────────────────── */
   const pwInput  = document.getElementById('password-input');
   const pwToggle = document.getElementById('pw-toggle-btn');
@@ -94,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginBtn.disabled = false;
         loginBtn.style.opacity = '1';
         // TODO: replace with actual redirect
-        // window.location.href = './index.html';
+        // window.location.href = './dashboard.html';
       }, 1800);
     });
   }

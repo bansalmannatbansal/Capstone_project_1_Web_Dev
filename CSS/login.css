@@ -313,6 +313,38 @@ html, body {
   color: var(--muted);
 }
 
+/* ─── ROLE SELECTOR ───────────────────────────────────────────── */
+.role-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  background: var(--input-bg);
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid var(--input-border);
+}
+.role-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.role-btn:hover {
+  color: var(--white);
+}
+.role-btn.active {
+  background: linear-gradient(135deg, var(--violet), var(--pink));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+}
+
 /* ─── FORM ────────────────────────────────────────────────────── */
 .login-form {
   display: flex;
