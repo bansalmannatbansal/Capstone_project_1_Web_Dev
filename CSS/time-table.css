@@ -958,25 +958,35 @@ svg {
 }
 
 .timetable-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  min-width: 850px; /* Reduced to allow better fit on medium screens */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: unset; /* Remove fixed min-width to prevent overflow */
 }
 
 .day-column {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
 }
 
 .day-header {
   padding: 12px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-glass);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-glass);
   text-align: center;
   backdrop-filter: blur(10px);
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-self: stretch;
 }
 
 .day-name {
@@ -984,7 +994,7 @@ svg {
   font-family: var(--font-syne);
   font-size: 14px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--violet);
 }
 
 .day-date {
@@ -997,13 +1007,15 @@ svg {
 
 .class-list {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 8px;
+  flex: 1;
+  overflow: visible; /* Prevent internal scrollbars */
 }
 
 .class-card {
   position: relative;
-  padding: 12px 14px;
+  padding: 10px 14px;
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
@@ -1011,7 +1023,9 @@ svg {
   transition: all var(--trans-normal);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+  min-width: 140px;
+  flex-shrink: 1; /* Allow cards to shrink to fit */
 }
 
 .class-card:hover {
@@ -1066,10 +1080,10 @@ svg {
 
 .class-room {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   color: var(--text-secondary);
   background: rgba(255, 255, 255, 0.05);
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: 4px;
   width: fit-content;
 }
