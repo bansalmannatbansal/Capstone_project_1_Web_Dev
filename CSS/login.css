@@ -18,13 +18,17 @@
   --glass-border: rgba(255,255,255,0.12);
   --input-bg:     rgba(255,255,255,0.04);
   --input-border: rgba(255,255,255,0.10);
+
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-syne: "Syne", sans-serif;
 }
 
 html, body {
   width: 100%; height: 100%;
   background: var(--bg);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
 }
@@ -190,7 +194,7 @@ html, body {
   fill: #fff;
 }
 .logo-wordmark {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne);
   font-weight: 800;
   font-size: 1.25rem;
   color: var(--white);
@@ -209,7 +213,7 @@ html, body {
   z-index: 1;
 }
 .left-hero h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne);
   font-weight: 800;
   font-size: 2.4rem;
   line-height: 1.15;
@@ -270,7 +274,7 @@ html, body {
 
 /* ─── BOTTOM TAGLINE ──────────────────────────────────────────── */
 .tagline {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   color: rgba(167,139,250,0.65);
   line-height: 1.8;
@@ -301,7 +305,7 @@ html, body {
   margin-bottom: 28px;
 }
 .form-header h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne);
   font-weight: 700;
   font-size: 1.6rem;
   color: var(--white);
@@ -329,7 +333,7 @@ html, body {
   border: none;
   background: transparent;
   color: var(--muted);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-size: 0.8rem;
   font-weight: 600;
   border-radius: 10px;
@@ -402,7 +406,7 @@ input[type="text"] {
   border: 1px solid var(--input-border);
   border-radius: 12px;
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-size: 0.875rem;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
@@ -478,7 +482,7 @@ input.no-icon { padding-left: 14px; }
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-weight: 700;
   font-size: 0.82rem;
   letter-spacing: 0.12em;
@@ -644,4 +648,78 @@ input#password-input { padding-right: 40px; }
   .left-hero h1 { font-size: 1.6rem; }
   .right-panel { padding: 28px 22px; }
   .left-panel { padding: 28px 22px; }
+}
+
+/* ─── COMING SOON OVERLAY ─────────────────────────────────────── */
+.coming-soon-container {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeInCS 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.cs-icon-wrap {
+  width: 72px;
+  height: 72px;
+  background: rgba(124,58,237,0.08);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border: 1px solid rgba(124,58,237,0.25);
+  box-shadow: 
+    0 8px 32px rgba(124,58,237,0.15),
+    inset 0 0 12px rgba(124,58,237,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* pulse effect behind icon */
+.cs-icon-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, var(--violet) 0%, transparent 70%);
+  opacity: 0.1;
+  animation: csPulse 3s ease-in-out infinite;
+}
+
+.cs-icon-wrap svg {
+  width: 32px;
+  height: 32px;
+  color: var(--muted-violet);
+  position: relative;
+  z-index: 1;
+}
+
+.coming-soon-container h3 {
+  font-family: var(--font-syne);
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--white), var(--muted-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.coming-soon-container p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+@keyframes fadeInCS {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes csPulse {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.2); opacity: 0.15; }
 }
