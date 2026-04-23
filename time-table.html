@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RishiLearn - Time Table</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/time-table.css">
 </head>
 <body>
@@ -32,7 +36,7 @@
 
             <!-- Sidebar-style Nav Links -->
             <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-                <a href="./index.html" class="nav-item" id="nav-dashboard">
+                <a href="./dashboard.html" class="nav-item" id="nav-dashboard">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="3" width="7" height="7" />
                         <rect x="14" y="3" width="7" height="7" />
@@ -48,13 +52,7 @@
                     </svg>
                     Courses
                 </a>
-                <a href="#categories" class="nav-item" id="nav-categories">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
-                    </svg>
-                    Categories
-                </a>
+                
                 <a href="./time-table.html" class="nav-item active" id="nav-timetable">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
@@ -88,6 +86,7 @@
             </div>
         </div>
     </header>
+<<<<<<< HEAD
 
     <footer class="footer">
       <div class="footer-glow" aria-hidden="true"></div>
@@ -131,4 +130,198 @@
       </div>
     </footer>
   </body>
+=======
+    <main class="timetable-section">
+        <!-- Ambient glow orbs -->
+        <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+        <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
+        <div class="glow-orb glow-orb-3" aria-hidden="true"></div>
+
+        <div class="container">
+            <header class="section-header">
+                <div class="section-title-group">
+                    <span class="section-label-mono">// academic.schedule</span>
+                    <h1 class="section-title">Weekly Time Table</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="week-picker">
+                        <button class="btn-ghost btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <span class="current-week">April 21 - 27</span>
+                        <button class="btn-ghost btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="timetable-container">
+                <div class="timetable-grid">
+                    <!-- Day: Monday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <span class="day-name">Monday</span>
+                            <span class="day-date">21 April</span>
+                        </div>
+                        <div class="class-list">
+                            <div class="class-card active">
+                                <span class="class-time">09:00 - 10:00</span>
+                                <span class="class-title">Maths</span>
+                                <span class="class-room">A 411</span>
+                                <span class="class-tag">Live</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">10:00 - 11:30</span>
+                                <span class="class-title">WAD 1</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">11:30 - 13:00</span>
+                                <span class="class-title">DSA</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card break">
+                                <span class="class-time">13:00 - 14:30</span>
+                                <span class="class-title">Lunch Break</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day: Tuesday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <span class="day-name">Tuesday</span>
+                            <span class="day-date">22 April</span>
+                        </div>
+                        <div class="class-list">
+                            <div class="class-card">
+                                <span class="class-time">09:00 - 10:00</span>
+                                <span class="class-title">Maths</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">10:00 - 11:30</span>
+                                <span class="class-title">FDS</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">11:30 - 13:00</span>
+                                <span class="class-title">DSA</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card break">
+                                <span class="class-time">13:00 - 14:30</span>
+                                <span class="class-title">Lunch Break</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day: Wednesday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <span class="day-name">Wednesday</span>
+                            <span class="day-date">23 April</span>
+                        </div>
+                        <div class="class-list">
+                            <div class="class-card">
+                                <span class="class-time">09:00 - 10:30</span>
+                                <span class="class-title">Maths</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">10:30 - 12:00</span>
+                                <span class="class-title">FDS</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">12:00 - 13:00</span>
+                                <span class="class-title">DSA</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card break">
+                                <span class="class-time">13:00 - 14:30</span>
+                                <span class="class-title">Lunch Break</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day: Thursday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <span class="day-name">Thursday</span>
+                            <span class="day-date">24 April</span>
+                        </div>
+                        <div class="class-list">
+                            <div class="class-card">
+                                <span class="class-time">09:00 - 10:00</span>
+                                <span class="class-title">Maths</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">10:00 - 11:30</span>
+                                <span class="class-title">FDS</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">11:30 - 13:00</span>
+                                <span class="class-title">WAD</span>
+                                <span class="class-room">C 104</span>
+                            </div>
+                            <div class="class-card break">
+                                <span class="class-time">13:00 - 14:30</span>
+                                <span class="class-title">Lunch Break</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">14:30 - 15:30</span>
+                                <span class="class-title">WAD</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">15:30 - 16:30</span>
+                                <span class="class-title">DSA</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day: Friday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <span class="day-name">Friday</span>
+                            <span class="day-date">25 April</span>
+                        </div>
+                        <div class="class-list">
+                            <div class="class-card">
+                                <span class="class-time">09:00 - 10:00</span>
+                                <span class="class-title">Maths</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">10:00 - 11:30</span>
+                                <span class="class-title">WAD</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">11:30 - 13:00</span>
+                                <span class="class-title">DSA</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                            <div class="class-card break">
+                                <span class="class-time">13:00 - 14:30</span>
+                                <span class="class-title">Lunch Break</span>
+                            </div>
+                            <div class="class-card">
+                                <span class="class-time">14:30 - 15:30</span>
+                                <span class="class-title">WAD</span>
+                                <span class="class-room">A 411</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+>>>>>>> a1ba600ee49c02efe8d4c14d3599851b7eab8c71
 </html>
