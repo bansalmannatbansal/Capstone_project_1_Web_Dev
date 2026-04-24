@@ -66,10 +66,8 @@ Capstrone_1/
 
 ---
 
-## 🗺️ Project Plan & Visual Strategy
+## 🗺️ Project Plan
 
-### Visual Concept
-![RishiLearn Dashboard Mockup](./assets/mockup.png)
 
 ### User Flow Diagram
 
