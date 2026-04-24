@@ -113,7 +113,7 @@ graph TD
 - [x] Authentication Portal.
 
 ### Phase 3: Interaction & Logic (In Progress)
-- [/] Dynamic Search Functionality.
+- [ ] Dynamic Search Functionality.
 - [ ] Profile Settings & Customization.
 - [ ] Notification System.
 - [ ] Real-time Attendance Updates.
