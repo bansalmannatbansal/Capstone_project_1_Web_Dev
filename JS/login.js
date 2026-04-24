@@ -1,57 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 0. ROLE SELECTOR ──────────────────────────────────────── */
-  const roleBtns = document.querySelectorAll('.role-btn');
-  const loginTitle = document.getElementById('login-title');
-  let currentRole = 'student'; // default
-
-  roleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all
-      roleBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked
-      btn.classList.add('active');
-      
-      // Update role and title
-      currentRole = btn.getAttribute('data-role');
-      const roleName = btn.textContent;
-      if (loginTitle) {
-        loginTitle.textContent = `${roleName} Login`;
-      }
-
-      // ─── COMING SOON TOGGLE ───────────────────────────────────
-      const loginForm = document.getElementById('login-form');
-      let comingSoon = document.getElementById('coming-soon-container');
-      
-      if (currentRole === 'teacher') {
-        if (!comingSoon) {
-          comingSoon = document.createElement('div');
-          comingSoon.id = 'coming-soon-container';
-          comingSoon.className = 'coming-soon-container';
-          comingSoon.innerHTML = `
-            <div class="cs-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-              </svg>
-            </div>
-            <h3>Coming Soon...</h3>
-            <p>The ${roleName} portal is currently under development. We're crafting something special!</p>
-          `;
-          loginForm.parentNode.insertBefore(comingSoon, loginForm.nextSibling);
-        } else {
-          comingSoon.querySelector('p').textContent = `The ${roleName} portal is currently under development. We're crafting something special!`;
-        }
-        
-        loginForm.style.display = 'none';
-        comingSoon.style.display = 'flex';
-      } else {
-        // Restore login form for student (and admin)
-        loginForm.style.display = 'flex';
-        if (comingSoon) comingSoon.style.display = 'none';
-      }
-    });
-  });
-
   /* ── 1. PASSWORD VISIBILITY TOGGLE ─────────────────────────── */
   const pwInput  = document.getElementById('password-input');
   const pwToggle = document.getElementById('pw-toggle-btn');
@@ -146,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginBtn.disabled = false;
         loginBtn.style.opacity = '1';
         // TODO: replace with actual redirect
-        // window.location.href = './dashboard.html';
+        // window.location.href = './index.html';
       }, 1800);
     });
   }
