@@ -650,71 +650,7 @@ input#password-input { padding-right: 40px; }
   .left-panel { padding: 28px 22px; }
 }
 
-<<<<<<< HEAD
-/* ── FOOTER ─────────────────────────────────────────────────── */
 
-.footer {
-  position: relative;
-  background: rgba(10, 10, 26, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid var(--glass-border);
-  padding: 60px 0 40px;
-  margin-top: 60px;
-  overflow: hidden;
-  z-index: 10;
-  width: 100%;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.footer-glow {
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-  pointer-events: none;
-}
-
-.footer-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 120px;
-  margin-bottom: 0;
-}
-
-.footer-brand .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-
-.brand-orb {
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
-}
-
-.brand-text {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.2rem;
-  background: linear-gradient(135deg, var(--violet-dim) 0%, var(--pink) 100%);
-=======
 /* ─── COMING SOON OVERLAY ─────────────────────────────────────── */
 .coming-soon-container {
   display: none; /* hidden by default */
@@ -767,131 +703,24 @@ input#password-input { padding-right: 40px; }
   font-weight: 800;
   margin-bottom: 12px;
   background: linear-gradient(90deg, var(--white), var(--muted-violet));
->>>>>>> a1ba600ee49c02efe8d4c14d3599851b7eab8c71
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-<<<<<<< HEAD
-.footer-brand .footer-desc {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-  line-height: 1.6;
-  max-width: 300px;
-}
-
-.social-links {
-  display: flex;
-  gap: 12px;
-}
-
-.social-link {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  transition: all 0.3s ease;
-}
-
-.social-link svg {
-  width: 18px;
-  height: 18px;
-}
-
-.social-link:hover {
-  background: rgba(124, 58, 237, 0.15);
-  border-color: var(--violet);
-  color: var(--white);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
-}
-
-.footer-links {
-  display: flex;
-}
-
-.footer-label-mono {
-  display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--violet);
-  margin-bottom: 20px;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
-}
-
-.footer-col ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-}
-
-.footer-col a {
-  font-size: 0.85rem;
-  color: var(--muted);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.footer-col a:hover {
-  color: var(--white);
-  transform: translateX(4px);
-}
-
-
-
-.made-with {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.made-with .heart {
-  color: var(--pink);
-  font-size: 1rem;
-  animation: heartBeat 1.5s ease-in-out infinite;
-}
-
-@keyframes heartBeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-@media (max-width: 768px) {
-  .footer-grid {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-}
-
-
-
-=======
 .coming-soon-container p {
   font-size: 0.95rem;
   color: var(--muted);
-  max-width: 300px;
+  max-width: 400px;
   line-height: 1.6;
 }
 
 @keyframes fadeInCS {
-  from { opacity: 0; transform: translateY(20px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes csPulse {
   0%, 100% { transform: scale(1); opacity: 0.1; }
-  50% { transform: scale(1.2); opacity: 0.15; }
+  50% { transform: scale(1.2); opacity: 0.2; }
 }
->>>>>>> a1ba600ee49c02efe8d4c14d3599851b7eab8c71
