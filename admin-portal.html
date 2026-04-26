@@ -57,17 +57,18 @@
     <div class="portal-container">
         <aside class="sidebar">
             <nav class="nav-list">
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item active">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                     Dashboard
                 </a>
-                <a href="#" class="nav-item active">
+                <a href="#" class="nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
                     Add Student
                 </a>
                 <a href="#" class="nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     Add Teacher
+                    <span class="badge-soon">Soon</span>
                 </a>
                 <a href="#" class="nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -81,8 +82,111 @@
         </aside>
 
         <main class="main-content">
+            <!-- VIEW: DASHBOARD -->
+            <section id="view-dashboard" class="dashboard-hero-grid">
+                <!-- Left Column: Stats Cards -->
+                <div class="hero-left">
+                    <div class="glass-card stat-card">
+                        <div class="card-header-line">
+                            <span class="card-label-mono">// students.active</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-icon-box student-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">150+</span>
+                                <span class="stat-label">Active Students</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-card">
+                        <div class="card-header-line">
+                            <span class="card-label-mono">// teachers.active</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-icon-box teacher-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value text-soon">Coming Soon</span>
+                                <span class="stat-label">Active Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Leaderboard -->
+                <div class="hero-right">
+                    <div class="glass-card card-leaderboard">
+                        <div class="card-header-line">
+                            <span class="card-label-mono">// ranking.leaderboard</span>
+                            <span class="view-all-link">View All Rankings</span>
+                        </div>
+                        <ul class="leaderboard-list">
+                            <li class="leaderboard-item rank-1">
+                                <div class="rank-badge">1</div>
+                                <div class="user-info">
+                                    <div class="user-avatar-sm">M</div>
+                                    <span class="user-name">Mannat Bansal</span>
+                                </div>
+                                <div class="user-stats">
+                                    <span class="user-xp">980 XP</span>
+                                    <div class="xp-bar"><div class="xp-fill w-98"></div></div>
+                                </div>
+                            </li>
+                            <li class="leaderboard-item rank-2">
+                                <div class="rank-badge">2</div>
+                                <div class="user-info">
+                                    <div class="user-avatar-sm">A</div>
+                                    <span class="user-name">Aarush Gupta</span>
+                                </div>
+                                <div class="user-stats">
+                                    <span class="user-xp">945 XP</span>
+                                    <div class="xp-bar"><div class="xp-fill w-94"></div></div>
+                                </div>
+                            </li>
+                            <li class="leaderboard-item rank-3">
+                                <div class="rank-badge">3</div>
+                                <div class="user-info">
+                                    <div class="user-avatar-sm">R</div>
+                                    <span class="user-name">Rishi</span>
+                                </div>
+                                <div class="user-stats">
+                                    <span class="user-xp">890 XP</span>
+                                    <div class="xp-bar"><div class="xp-fill w-89"></div></div>
+                                </div>
+                            </li>
+                            <li class="leaderboard-item">
+                                <div class="rank-badge">4</div>
+                                <div class="user-info">
+                                    <div class="user-avatar-sm">K</div>
+                                    <span class="user-name">Karan</span>
+                                </div>
+                                <div class="user-stats">
+                                    <span class="user-xp">820 XP</span>
+                                    <div class="xp-bar"><div class="xp-fill w-82"></div></div>
+                                </div>
+                            </li>
+                            <li class="leaderboard-item">
+                                <div class="rank-badge">5</div>
+                                <div class="user-info">
+                                    <div class="user-avatar-sm">I</div>
+                                    <span class="user-name">Ishita</span>
+                                </div>
+                                <div class="user-stats">
+                                    <span class="user-xp">750 XP</span>
+                                    <div class="xp-bar"><div class="xp-fill w-75"></div></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <!-- VIEW: ADD STUDENT -->
-            <section id="view-student" class="glass-card active-view">
+            <section id="view-student" class="glass-card" style="display: none;">
                 <header class="card-header">
                     <div class="icon-box">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -164,98 +268,59 @@
                     <h2 class="card-title">Add Teacher</h2>
                 </header>
 
-                <form class="form-grid">
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Full Name</label>
-                        </div>
-                        <input type="text" class="input-control" placeholder="e.g. Dr. Rajesh Kumar">
+                <div class="coming-soon-container">
+                    <div class="cs-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
                     </div>
-
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Email Address</label>
-                        </div>
-                        <input type="email" class="input-control" placeholder="rajesh@rishilearn.edu">
-                    </div>
-
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Employee ID</label>
-                        </div>
-                        <input type="text" class="input-control" placeholder="EMP-5021">
-                    </div>
-
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Year</label>
-                        </div>
-                        <select class="input-control">
-                            <option value="" disabled selected>Select Year</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                        </select>
-                    </div>
-
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Designation</label>
-                        </div>
-                        <input type="text" class="input-control" placeholder="e.g. Senior Professor">
-                    </div>
-
-                    <div class="field-group">
-                        <div class="label-row">
-                            <label class="field-label">Password</label>
-                        </div>
-                        <input type="password" class="input-control" placeholder="••••••••">
-                    </div>
-
-                    <button type="submit" class="btn-submit">
-                        Add Teacher
-                    </button>
-                </form>
+                    <h1 class="cs-title">Coming Soon</h1>
+                    <p class="cs-desc">We're building a powerful teacher management system. This feature will be available in the next update.</p>
+                </div>
             </section>
         </main>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="brand">
-                        <div class="brand-orb">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <circle cx="14" cy="14" r="12" stroke="url(#footerOrbGrad)" stroke-width="2"/>
-                                <path d="M9 10 L14 7 L19 10 L19 18 L14 21 L9 18 Z" fill="url(#footerOrbFill)" opacity="0.9"/>
-                                <circle cx="14" cy="14" r="3" fill="#fff" opacity="0.8" />
-                                <defs>
-                                    <linearGradient id="footerOrbGrad" x1="0" y1="0" x2="28" y2="28">
-                                        <stop offset="0%" stop-color="#8b5cf6" />
-                                        <stop offset="100%" stop-color="#ec4899" />
-                                    </linearGradient>
-                                    <linearGradient id="footerOrbFill" x1="0" y1="0" x2="28" y2="28">
-                                        <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
-                                        <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        <span class="brand-text">RishiLearn</span>
-                    </a>
-                    <p class="footer-desc">Empowering educators to manage, monitor, and shape the future of learning.</p>
-                </div>
-                <nav class="footer-nav">
-                    <a href="#">manage_students</a>
-                    <a href="#">manage_faculty</a>
-                    <a href="#">timetable_editor</a>
-                    <a href="#">reports</a>
-                </nav>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="#" class="brand">
+              <div class="brand-orb">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="12" stroke="url(#footerOrbGrad)" stroke-width="2"/>
+                  <path d="M9 10 L14 7 L19 10 L19 18 L14 21 L9 18 Z" fill="url(#footerOrbFill)" opacity="0.9"/>
+                  <circle cx="14" cy="14" r="3" fill="#fff" opacity="0.8" />
+                  <defs>
+                    <linearGradient id="footerOrbGrad" x1="0" y1="0" x2="28" y2="28">
+                      <stop offset="0%" stop-color="#8b5cf6" />
+                      <stop offset="100%" stop-color="#ec4899" />
+                    </linearGradient>
+                    <linearGradient id="footerOrbFill" x1="0" y1="0" x2="28" y2="28">
+                      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
+                      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="brand-text">RishiLearn</span>
+            </a>
+            <p class="footer-desc">Empowering educators to manage, monitor, and shape the future of learning.</p>
+          </div>
+          <nav class="footer-nav">
+            <div class="footer-nav-col">
+              <span class="footer-nav-title">Management</span>
+              <div class="footer-nav-links">
+                <a href="#">manage_students</a>
+                <a href="#">manage_faculty</a>
+                <a href="#">timetable_editor</a>
+                <a href="#">reports</a>
+              </div>
             </div>
-
+          </nav>
         </div>
+
+      </div>
     </footer>
+
 
     <!-- Custom JS -->
     <script src="JS/admin.js"></script>
