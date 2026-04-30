@@ -106,13 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
     toast._timer = setTimeout(() => toast.classList.remove('show'), 3000);
   }
 
-  /* ── 3. FORM VALIDATION & SUBMIT ────────────────────────────── */
+  /* ── 3. SUPABASE CONFIGURATION ──────────────────────────────── */
+  const supabaseUrl = 'https://jxvmejhmwjguutvkrerq.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp4dm1lamhtd2pndXV0dmtyZXJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NDM1NDcsImV4cCI6MjA5MjMxOTU0N30.3AxL09p0b8L_7ExCkjGXOBkg7xXsztEdSvNRiISPo8c';
+  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+  /* ── 4. FORM VALIDATION & SUBMIT ────────────────────────────── */
   const form        = document.getElementById('login-form');
   const emailInput  = document.getElementById('email-input');
   const loginBtn    = document.getElementById('btn-login');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const email    = emailInput.value.trim();
@@ -135,19 +140,49 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate loading state
+      // Show loading state
       loginBtn.textContent = 'Authenticating…';
       loginBtn.disabled = true;
       loginBtn.style.opacity = '0.75';
 
-      setTimeout(() => {
-        showToast('✓ Login successful! Redirecting…', 'info');
-        loginBtn.textContent = 'Login →';
-        loginBtn.disabled = false;
-        loginBtn.style.opacity = '1';
-        // TODO: replace with actual redirect
-        // window.location.href = './dashboard.html';
-      }, 1800);
+      try {
+        if (currentRole === 'admin') {
+          // Query the custom 'admins' table
+          const { data, error } = await supabaseClient
+            .from('admins')
+            .select('*')
+            .eq('email', email)
+            .eq('password', password)
+            .single();
+
+          if (error || !data) {
+            showToast('Invalid Admin credentials.', 'error');
+          } else {
+            showToast('✓ Admin access granted! Redirecting…', 'info');
+            setTimeout(() => {
+              window.location.href = data.redirect_url || 'https://rishilearn-backend.onrender.com/admin';
+            }, 1000);
+          }
+        } else {
+          // Simulation for Student (You can implement Supabase for students here too)
+          setTimeout(() => {
+            showToast('✓ Login successful! Redirecting…', 'info');
+            loginBtn.textContent = 'Login →';
+            loginBtn.disabled = false;
+            loginBtn.style.opacity = '1';
+            window.location.href = './dashboard.html';
+          }, 1800);
+        }
+      } catch (err) {
+        showToast('Connection error. Please try again.', 'error');
+        console.error(err);
+      } finally {
+        if (currentRole === 'admin') {
+          loginBtn.textContent = 'Login →';
+          loginBtn.disabled = false;
+          loginBtn.style.opacity = '1';
+        }
+      }
     });
   }
 
