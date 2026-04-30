@@ -145,43 +145,60 @@ document.addEventListener('DOMContentLoaded', () => {
       loginBtn.disabled = true;
       loginBtn.style.opacity = '0.75';
 
+      console.log('Attempting login for role:', currentRole);
+
       try {
         if (currentRole === 'admin') {
           // Query the custom 'admins' table
+          console.log('Querying Supabase admins table for:', email);
           const { data, error } = await supabaseClient
             .from('admins')
             .select('*')
             .eq('email', email)
             .eq('password', password)
-            .single();
+            .maybeSingle(); // maybeSingle returns null if not found instead of an error
 
-          if (error || !data) {
+          if (error) {
+            console.error('Supabase Error:', error);
+            showToast('Database connection error.', 'error');
+          } else if (!data) {
+            console.log('Login failed: No matching admin found.');
             showToast('Invalid Admin credentials.', 'error');
           } else {
+            console.log('Login successful! Admin Data:', data);
             showToast('✓ Admin access granted! Redirecting…', 'info');
+            
+            // Perform redirect
+            const targetUrl = data.redirect_url || 'https://rishilearn-backend.onrender.com/admin';
             setTimeout(() => {
-              window.location.href = data.redirect_url || 'https://rishilearn-backend.onrender.com/admin';
-            }, 1000);
+              window.location.href = targetUrl;
+            }, 800);
+          }
+        } else if (currentRole === 'student') {
+          // Query the 'students' table (if it has passwords)
+          // For now, let's at least check if the user exists
+          const { data, error } = await supabaseClient
+            .from('students')
+            .select('*')
+            .eq('email', email)
+            .maybeSingle();
+
+          if (data) {
+            showToast('✓ Student login successful!', 'info');
+            setTimeout(() => { window.location.href = './dashboard.html'; }, 1000);
+          } else {
+            showToast('Student record not found.', 'error');
           }
         } else {
-          // Simulation for Student (You can implement Supabase for students here too)
-          setTimeout(() => {
-            showToast('✓ Login successful! Redirecting…', 'info');
-            loginBtn.textContent = 'Login →';
-            loginBtn.disabled = false;
-            loginBtn.style.opacity = '1';
-            window.location.href = './dashboard.html';
-          }, 1800);
+          showToast('Feature coming soon for this role.', 'info');
         }
       } catch (err) {
-        showToast('Connection error. Please try again.', 'error');
-        console.error(err);
+        showToast('An unexpected error occurred.', 'error');
+        console.error('Catch Error:', err);
       } finally {
-        if (currentRole === 'admin') {
-          loginBtn.textContent = 'Login →';
-          loginBtn.disabled = false;
-          loginBtn.style.opacity = '1';
-        }
+        loginBtn.textContent = 'Login →';
+        loginBtn.disabled = false;
+        loginBtn.style.opacity = '1';
       }
     });
   }
