@@ -175,19 +175,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 800);
           }
         } else if (currentRole === 'student') {
-          // Query the 'students' table (if it has passwords)
-          // For now, let's at least check if the user exists
+          // Query the 'students' table with both email and password
           const { data, error } = await supabaseClient
             .from('students')
             .select('*')
             .eq('email', email)
+            .eq('password', password)
             .maybeSingle();
 
-          if (data) {
+          if (error) {
+            console.error('Supabase Error:', error);
+            showToast('Database connection error.', 'error');
+          } else if (data) {
             showToast('✓ Student login successful!', 'info');
             setTimeout(() => { window.location.href = './dashboard.html'; }, 1000);
           } else {
-            showToast('Student record not found.', 'error');
+            // Check if email exists but password was wrong
+            const { data: emailExists } = await supabaseClient
+              .from('students')
+              .select('id')
+              .eq('email', email)
+              .maybeSingle();
+            
+            if (emailExists) {
+              showToast('Invalid password.', 'error');
+            } else {
+              showToast('Student record not found.', 'error');
+            }
           }
         } else {
           showToast('Feature coming soon for this role.', 'info');
