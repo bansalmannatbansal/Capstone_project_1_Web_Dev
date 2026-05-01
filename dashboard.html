@@ -129,6 +129,30 @@
           <div class="avatar-wrap" id="user-avatar">
             <div class="avatar">R</div>
             <span class="avatar-status"></span>
+            
+            <div class="dropdown-menu" id="avatar-dropdown">
+              <a href="#" class="dropdown-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Profile
+              </a>
+              <a href="#" class="dropdown-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                Activity
+              </a>
+              <a href="index.html" class="dropdown-item logout-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Log Out
+              </a>
+            </div>
           </div>
           <button
             class="hamburger"
@@ -383,5 +407,24 @@
       </div>
     </footer>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const userAvatar = document.getElementById("user-avatar");
+        const avatarDropdown = document.getElementById("avatar-dropdown");
+
+        if (userAvatar && avatarDropdown) {
+          userAvatar.addEventListener("click", (e) => {
+            e.stopPropagation();
+            avatarDropdown.classList.toggle("show");
+          });
+
+          document.addEventListener("click", (e) => {
+            if (!userAvatar.contains(e.target)) {
+              avatarDropdown.classList.remove("show");
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

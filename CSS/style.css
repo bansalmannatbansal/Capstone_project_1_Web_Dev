@@ -311,6 +311,68 @@ svg {
   border: 2px solid var(--bg-base);
 }
 
+/* Avatar Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 180px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--trans-normal);
+  z-index: 100;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-inter);
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all var(--trans-fast);
+}
+
+.dropdown-item svg {
+  opacity: 0.7;
+  transition: opacity var(--trans-fast);
+}
+
+.dropdown-item:hover {
+  background: var(--bg-glass);
+  color: var(--violet);
+}
+
+.dropdown-item:hover svg {
+  opacity: 1;
+  color: var(--violet);
+}
+
+.dropdown-item.logout-item:hover {
+  color: var(--pink);
+}
+
+.dropdown-item.logout-item:hover svg {
+  color: var(--pink);
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
